@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bniwyhcr5xl3t"]
+
+[ext_resource type="Texture2D" uid="uid://borictrkcrh2p" path="res://main_menu/textures/titleBackgroundArtPlaceholder.png" id="1_glbon"]
+[ext_resource type="Texture2D" uid="uid://b04xjiipnnflr" path="res://main_menu/textures/titlePlaceHolder.png" id="1_jix8l"]
+[ext_resource type="Texture2D" uid="uid://deqh5coc7ctxu" path="res://main_menu/textures/startButtonPlaceHolder.png" id="2_glbon"]
+[ext_resource type="Texture2D" uid="uid://cw8rhjngb8sos" path="res://main_menu/textures/settingsButtonPlaceHolder.png" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://ck0n1xvkm8to2" path="res://main_menu/textures/titleArtPlaceHolder.png" id="4_qe12f"]
+
+[node name="Control" type="Control" unique_id=6929408]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1727987751]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_glbon")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1034342158]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1453999875]
+layout_mode = 2
+theme_override_constants/separation = 180
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1837265485]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1458261105]
+layout_mode = 2
+texture = ExtResource("1_jix8l")
+stretch_mode = 2
+
+[node name="Menu Options" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=856994743]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Start Button Art" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu Options" unique_id=881499521]
+layout_mode = 2
+texture = ExtResource("2_glbon")
+stretch_mode = 2
+
+[node name="Settings Button Art" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu Options" unique_id=653761346]
+layout_mode = 2
+texture = ExtResource("3_nlkkf")
+stretch_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer" unique_id=1032378273]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Main Menu Art" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer" unique_id=1523135856]
+layout_mode = 2
+texture = ExtResource("4_qe12f")
