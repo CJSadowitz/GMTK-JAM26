@@ -1,0 +1,36 @@
+# Godot 4+ imports
+.import/
+.godot/
+
+# Mono/C# builds
+.mono/
+data_*/
+export/
+
+# Build outputs
+bin/
+obj/
+
+# Visual Studio / Rider
+.vs/
+*.csproj
+*.sln
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Linux
+*~
+
+# Logs
+*.log
+
