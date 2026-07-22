@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://borictrkcrh2p" path="res://main_menu/textures/titleBackgroundArtPlaceholder.png" id="1_glbon"]
 [ext_resource type="Texture2D" uid="uid://b04xjiipnnflr" path="res://main_menu/textures/titlePlaceHolder.png" id="1_jix8l"]
+[ext_resource type="Script" uid="uid://bvd5y4mf4j81v" path="res://main_menu_buttons.gd" id="1_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://deqh5coc7ctxu" path="res://main_menu/textures/startButtonPlaceHolder.png" id="2_glbon"]
 [ext_resource type="Texture2D" uid="uid://cw8rhjngb8sos" path="res://main_menu/textures/settingsButtonPlaceHolder.png" id="3_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://ck0n1xvkm8to2" path="res://main_menu/textures/titleArtPlaceHolder.png" id="4_qe12f"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nlkkf")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1727987751]
 layout_mode = 1
@@ -53,15 +55,13 @@ stretch_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Start Button Art" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu Options" unique_id=881499521]
+[node name="Start Button" type="MenuButton" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu Options" unique_id=529549825]
 layout_mode = 2
-texture = ExtResource("2_glbon")
-stretch_mode = 2
+icon = ExtResource("2_glbon")
 
-[node name="Settings Button Art" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu Options" unique_id=653761346]
+[node name="Settings Button" type="MenuButton" parent="MarginContainer/HBoxContainer/VBoxContainer/Menu Options" unique_id=1111885197]
 layout_mode = 2
-texture = ExtResource("3_nlkkf")
-stretch_mode = 2
+icon = ExtResource("3_nlkkf")
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer" unique_id=1032378273]
 layout_mode = 2
@@ -70,3 +70,6 @@ size_flags_horizontal = 3
 [node name="Main Menu Art" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer" unique_id=1523135856]
 layout_mode = 2
 texture = ExtResource("4_qe12f")
+
+[connection signal="button_up" from="MarginContainer/HBoxContainer/VBoxContainer/Menu Options/Start Button" to="." method="_on_start_button_button_up"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/VBoxContainer/Menu Options/Settings Button" to="." method="_on_settings_button_button_up"]
