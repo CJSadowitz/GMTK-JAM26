@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci31d8r3dt7gr"
-path="res://.godot/imported/titleBackgroundArtPlaceholder.png-d4f5146eca53e1922b9f2e2fc2bbb767.ctex"
+uid="uid://bjilw705oroq1"
+path="res://.godot/imported/New Piskel.png-4f43e603d4d626527a9bcfa8e8b0a004.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main_menu/textures/titleBackgroundArtPlaceholder.png"
-dest_files=["res://.godot/imported/titleBackgroundArtPlaceholder.png-d4f5146eca53e1922b9f2e2fc2bbb767.ctex"]
+source_file="res://main_menu/textures/New Piskel.png"
+dest_files=["res://.godot/imported/New Piskel.png-4f43e603d4d626527a9bcfa8e8b0a004.ctex"]
 
 [params]
 
