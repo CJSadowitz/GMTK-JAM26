@@ -1,10 +1,11 @@
 extends Node
 
-const MINIMUM_STAT = 3.0;
+const MIN_STAT = 3.0;
+const MAX_STAT = 10.0;
 
-var speed   = MINIMUM_STAT;
-var offense = MINIMUM_STAT;
-var shoot   = MINIMUM_STAT;
-var dribble = MINIMUM_STAT;
-var passing = MINIMUM_STAT;
-var defense = MINIMUM_STAT;
+var speed   = MIN_STAT;
+var offense = MIN_STAT;
+var shoot   = MIN_STAT;
+var dribble = MIN_STAT;
+var passing = MIN_STAT;
+var defense = MIN_STAT;

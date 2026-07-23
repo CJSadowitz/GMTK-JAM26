@@ -1,5 +1,6 @@
 extends Node2D
 
+const RUNNER_SCENE = preload("res://RunningPlayer.tscn")
 const MAIN_SCENE = "res://MainGame.tscn"
 
 const RUN_SPEED = 100;
@@ -8,8 +9,8 @@ var runners_remaining = NUM_OF_RUNNERS;
 
 const GREAT_SKILL_CHECK_BONUS = 0.3;
 const GOOD_SKILL_CHECK_BONUS  = 0.1;
+const SKILL_CHECK_DEDUCTION   = 0.6;
 
-@onready var running_player = $"Player";
 var spawn_width = 0;
 
 var runners = [];
@@ -24,12 +25,11 @@ func _process(delta: float) -> void:
 	update_runner_position(delta);
 	if Input.is_action_just_pressed("Skill Check"):
 		if in_great:
-			TeamStats.speed += GREAT_SKILL_CHECK_BONUS;
+			TeamStats.speed = min(TeamStats.speed + GREAT_SKILL_CHECK_BONUS, TeamStats.MAX_STAT);
 		elif in_good:
-			TeamStats.speed += GOOD_SKILL_CHECK_BONUS;
+			TeamStats.speed = min(TeamStats.speed + GOOD_SKILL_CHECK_BONUS, TeamStats.MAX_STAT);
 		else:
-			# Play a you missed sound no deductions
-			pass
+			TeamStats.speed = max(TeamStats.speed - SKILL_CHECK_DEDUCTION, TeamStats.MIN_STAT);
 	# Return to main scene
 	if runners.size() == 0 and runners_remaining == 0:
 		get_tree().change_scene_to_file(MAIN_SCENE);
@@ -52,7 +52,7 @@ func _on_timer_timeout() -> void:
 	runners_remaining -= 1;
 	
 	if spawn_width != 0:
-		var new_runner = running_player.duplicate();
+		var new_runner = RUNNER_SCENE.instantiate();
 		var x_spawn = randi() % spawn_width;
 		new_runner.position = Vector2(x_spawn, -100);
 		var run_speed = randi() % 5 + 1;
