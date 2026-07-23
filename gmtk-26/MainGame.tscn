@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://if2h52wf3pf4"]
+
+[ext_resource type="Texture2D" uid="uid://b2iks4thdxb4k" path="res://main_game/textures/radarChartPlaceholder.png" id="1_3tbxw"]
+[ext_resource type="Script" uid="uid://d3o4tnfqev8oy" path="res://MainGameController.gd" id="1_e3m3f"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3tbxw"]
+width = 256
+height = 256
+
+[node name="Control" type="Control" unique_id=1062842554]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e3m3f")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1966134502]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1106904302]
+layout_mode = 2
+
+[node name="Left Side bar" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1894524061]
+layout_mode = 2
+
+[node name="Radar Chart" type="TextureRect" parent="MarginContainer/HBoxContainer/Left Side bar" unique_id=461011385]
+layout_mode = 2
+texture = ExtResource("1_3tbxw")
+
+[node name="Mini Game Selection" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Left Side bar" unique_id=926345935]
+layout_mode = 2
+
+[node name="Dribbling" type="MenuButton" parent="MarginContainer/HBoxContainer/Left Side bar/Mini Game Selection" unique_id=1702718340]
+layout_mode = 2
+text = "Dribble Training"
+
+[node name="Speed" type="MenuButton" parent="MarginContainer/HBoxContainer/Left Side bar/Mini Game Selection" unique_id=53756041]
+layout_mode = 2
+text = "Running Laps"
+
+[node name="Shooting" type="MenuButton" parent="MarginContainer/HBoxContainer/Left Side bar/Mini Game Selection" unique_id=434735142]
+layout_mode = 2
+text = "Shooting"
+
+[node name="Offense" type="MenuButton" parent="MarginContainer/HBoxContainer/Left Side bar/Mini Game Selection" unique_id=1262040294]
+layout_mode = 2
+text = "Offensive Positioning"
+
+[node name="Defense" type="MenuButton" parent="MarginContainer/HBoxContainer/Left Side bar/Mini Game Selection" unique_id=433127459]
+layout_mode = 2
+text = "Defensive Positioning"
+
+[node name="Passing" type="MenuButton" parent="MarginContainer/HBoxContainer/Left Side bar/Mini Game Selection" unique_id=1330976191]
+layout_mode = 2
+text = "Passing"
+
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer" unique_id=347340139]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=672928232]
+layout_mode = 2
+
+[node name="Day Counter" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1472948624]
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_3tbxw")
+stretch_mode = 2
+
+[connection signal="button_up" from="MarginContainer/HBoxContainer/Left Side bar/Mini Game Selection/Dribbling" to="." method="_on_dribbling_button_up"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/Left Side bar/Mini Game Selection/Speed" to="." method="_on_speed_button_up"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/Left Side bar/Mini Game Selection/Shooting" to="." method="_on_shooting_button_up"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/Left Side bar/Mini Game Selection/Offense" to="." method="_on_offense_button_up"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/Left Side bar/Mini Game Selection/Defense" to="." method="_on_defense_button_up"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/Left Side bar/Mini Game Selection/Passing" to="." method="_on_passing_button_up"]
