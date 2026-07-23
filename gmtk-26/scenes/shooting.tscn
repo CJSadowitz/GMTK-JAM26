@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cii3lnoygq2fb"]
+
+[ext_resource type="Script" uid="uid://vmt30kjbgpio" path="res://scripts/HandsMovement.gd" id="1_qhuq3"]
+[ext_resource type="Texture2D" uid="uid://bcq3x6efw3072" path="res://assets/hands.png" id="2_qhuq3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhuq3"]
+radius = 29.0
+height = 144.0
+
+[node name="shooting" type="Node2D" unique_id=85079349]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=511996529]
+zoom = Vector2(2, 2)
+
+[node name="Hands" type="CharacterBody2D" parent="." unique_id=198090422]
+rotation = -1.5707964
+motion_mode = 1
+script = ExtResource("1_qhuq3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hands" unique_id=830558511]
+rotation = 1.5707964
+scale = Vector2(0.293, 0.289)
+texture = ExtResource("2_qhuq3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hands" unique_id=404938470]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_qhuq3")
