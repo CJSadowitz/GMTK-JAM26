@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="gmtk-26"
+run/main_scene="uid://if2h52wf3pf4"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+TeamStats="*uid://cl5uti1jv14oi"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor]
 
