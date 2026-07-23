@@ -1,8 +1,10 @@
 extends Node
 
-var speed   = 0;
-var offense = 0;
-var shoot   = 0;
-var dribble = 0;
-var passing = 0;
-var defense = 0;
+const MINIMUM_STAT = 3.0;
+
+var speed   = MINIMUM_STAT;
+var offense = MINIMUM_STAT;
+var shoot   = MINIMUM_STAT;
+var dribble = MINIMUM_STAT;
+var passing = MINIMUM_STAT;
+var defense = MINIMUM_STAT;
