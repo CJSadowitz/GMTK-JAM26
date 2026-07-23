@@ -48,8 +48,6 @@ alignment = 1
 
 [node name="Title" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1458261105]
 layout_mode = 2
-offset_transform_enabled = true
-offset_transform_position = Vector2(4, 0)
 texture = ExtResource("3_nlkkf")
 stretch_mode = 2
 
