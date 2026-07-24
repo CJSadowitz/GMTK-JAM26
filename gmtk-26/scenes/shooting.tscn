@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cii3lnoygq2fb"]
+
+[ext_resource type="Script" uid="uid://vmt30kjbgpio" path="res://scripts/HandsMovement.gd" id="1_qhuq3"]
+[ext_resource type="Texture2D" uid="uid://bcq3x6efw3072" path="res://assets/hands.png" id="2_qhuq3"]
+[ext_resource type="Texture2D" uid="uid://o8cii14vv80o" path="res://assets/field.png" id="3_6cnsd"]
+[ext_resource type="Texture2D" uid="uid://wwmysjdkay88" path="res://assets/soccer_ball.png" id="3_flpu0"]
+[ext_resource type="Script" uid="uid://dj7gdoymk3cil" path="res://scripts/spawner.gd" id="3_qu8ou"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_flpu0"]
+radius = 17.117243
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhuq3"]
+radius = 20.0
+
+[node name="shooting" type="Node2D" unique_id=85079349]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=359792175]
+z_index = -1
+offset_left = -292.0
+offset_top = -170.0
+offset_right = 292.0
+offset_bottom = 165.0
+texture = ExtResource("3_6cnsd")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=511996529]
+zoom = Vector2(2, 2)
+
+[node name="Hands" type="CharacterBody2D" parent="." unique_id=198090422]
+z_index = 3
+position = Vector2(0, 88)
+rotation = -1.5707964
+motion_mode = 1
+script = ExtResource("1_qhuq3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hands" unique_id=830558511]
+position = Vector2(-0.99999905, 0)
+rotation = 1.5707964
+scale = Vector2(0.19499998, 0.16125)
+texture = ExtResource("2_qhuq3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hands" unique_id=404938470]
+position = Vector2(23, 1.0053619e-06)
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_flpu0")
+
+[node name="spawner" type="Area2D" parent="." unique_id=430872101]
+position = Vector2(-196, -75)
+script = ExtResource("3_qu8ou")
+
+[node name="Sprite2D" type="Sprite2D" parent="spawner" unique_id=1082279993]
+position = Vector2(0, -38)
+scale = Vector2(0.61, 0.6)
+texture = ExtResource("3_flpu0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawner" unique_id=567093576]
+position = Vector2(0, -38)
+shape = SubResource("CircleShape2D_qhuq3")
+
+[node name="spawnpoints" type="Node2D" parent="." unique_id=2005903603]
+
+[node name="Marker2D" type="Marker2D" parent="spawnpoints" unique_id=746507715]
+position = Vector2(184, -93)
+rotation = -1.5707964
+
+[node name="Marker2D2" type="Marker2D" parent="spawnpoints" unique_id=373814683]
+position = Vector2(-205, 0)
+rotation = -1.5707964
+
+[node name="Marker2D3" type="Marker2D" parent="spawnpoints" unique_id=1806780241]
+position = Vector2(100, -21)
+rotation = -1.5707964
+
+[node name="Marker2D4" type="Marker2D" parent="spawnpoints" unique_id=31364682]
+position = Vector2(-122, -93)
+rotation = -1.5707964
+
+[node name="Timer" type="Timer" parent="." unique_id=1357358250]
+wait_time = 2.0
+
+[connection signal="body_entered" from="spawner" to="spawner" method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="spawner" method="_on_timer_timeout"]
