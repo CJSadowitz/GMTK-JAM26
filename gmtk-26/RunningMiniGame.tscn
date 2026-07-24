@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://ci31d8r3dt7gr" path="res://main_menu/textures/titleBackgroundArtPlaceholder.png" id="1_pgxsi"]
 [ext_resource type="Script" uid="uid://bo0wf5i1mpidt" path="res://RunningController.gd" id="1_r8qfl"]
-[ext_resource type="PackedScene" uid="uid://d14145nfvn0ij" path="res://RunningPlayer.tscn" id="3_l8hra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8qfl"]
 size = Vector2(1165, 254)
@@ -49,9 +48,6 @@ shape = SubResource("RectangleShape2D_l8hra")
 
 [node name="Timer" type="Timer" parent="." unique_id=150810933]
 autostart = true
-
-[node name="Player" parent="." unique_id=1583959986 instance=ExtResource("3_l8hra")]
-position = Vector2(-114, -174)
 
 [connection signal="body_entered" from="Good Area" to="." method="_on_good_area_body_entered"]
 [connection signal="body_exited" from="Good Area" to="." method="_on_good_area_body_exited"]

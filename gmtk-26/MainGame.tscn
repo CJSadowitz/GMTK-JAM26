@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b2iks4thdxb4k" path="res://main_game/textures/radarChartPlaceholder.png" id="1_3tbxw"]
 [ext_resource type="Script" uid="uid://d3o4tnfqev8oy" path="res://MainGameController.gd" id="1_e3m3f"]
+[ext_resource type="Script" uid="uid://ttactub8sbuj" path="res://RadarGraphBackground.gd" id="3_ws5ob"]
+[ext_resource type="Script" uid="uid://cxnmqv8y2o8vd" path="res://RadarGraphStats.gd" id="4_bqqt8"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3tbxw"]
 width = 256
@@ -72,6 +74,12 @@ layout_mode = 2
 layout_mode = 2
 texture = SubResource("NoiseTexture2D_3tbxw")
 stretch_mode = 2
+
+[node name="Radar Graph Background" type="Polygon2D" parent="." unique_id=1872280412]
+script = ExtResource("3_ws5ob")
+
+[node name="Radar Graph Stats" type="Polygon2D" parent="." unique_id=392416824]
+script = ExtResource("4_bqqt8")
 
 [connection signal="button_up" from="MarginContainer/HBoxContainer/Left Side bar/Mini Game Selection/Dribbling" to="." method="_on_dribbling_button_up"]
 [connection signal="button_up" from="MarginContainer/HBoxContainer/Left Side bar/Mini Game Selection/Speed" to="." method="_on_speed_button_up"]
