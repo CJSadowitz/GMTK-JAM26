@@ -1,5 +1,7 @@
 extends Area2D
 
+const MAIN_SCENE = "res://MainGame.tscn"
+
 var blocks = 0
 var misses = 0
 
@@ -38,3 +40,10 @@ func _on_timer_timeout() -> void:
 
 func _ready() -> void:
 	move_target()
+	
+func _process(delta: float) -> void:
+	var total = blocks + misses
+	
+	if total == 15:
+		get_tree().change_scene_to_file(MAIN_SCENE)
+	
